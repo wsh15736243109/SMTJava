@@ -4,6 +4,14 @@ public class Student {
     private int bookId;
     private String bookName;
 
+    public Student() {
+
+    }
+
+    public Student(String bookName) {
+        setBookName(bookName);
+    }
+
     public int getBookId() {
         return bookId;
     }
