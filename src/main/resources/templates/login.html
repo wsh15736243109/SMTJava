@@ -17,8 +17,9 @@
                     type: "POST",
                     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',//防止乱码
                     success: function (data) {
-                        alert("success" + JSON.stringify(data));
-                        window.location.href = "main"
+                        var json = JSON.stringify(data);
+                        alert("success" + json);
+                        window.location.href = "bookList"
                     },
                     error: function (result) {
                         alert("error" + JSON.stringify(result))
@@ -38,8 +39,8 @@
     <div class="div_dialog_inner">Welcome to SMT</div>
     <div class="div_input_parent">
         <div class="div_input">用户名:<input id="et_username" type="text" style="margin-left: 10px"/></div>
-        <div class="div_input">密&nbsp;&nbsp;&nbsp;码:<input id="et_password" type="password" style="margin-left: 10px"/>
-        </div>
+        <div class="div_input">密&nbsp;&nbsp;&nbsp;码:<input id="et_password" type="password" style="margin-left: 10px"/></div>
+        <div class="div_forget">忘记密码?</div>
         <div class="div_input">
             <button class="btn" id="btn_login">登录</button>
             <button class="btn" id="btn_register">注册</button>

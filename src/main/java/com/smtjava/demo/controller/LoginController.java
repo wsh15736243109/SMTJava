@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class LoginController {
@@ -37,12 +39,14 @@ public class LoginController {
         }
         SqlSessionFactory sqlMapper = new SqlSessionFactoryBuilder().build(reader);
         SqlSession session = sqlMapper.openSession();
-        Student user = session.getMapper(StudentMapper.class).queryByName(userName);
-        session.close();
+        StudentMapper studentMapper = session.getMapper(StudentMapper.class);
+        Student user = studentMapper.queryByName(userName);
         if (user == null) {
+            session.close();
             return new BaseRes(-1, "该用户不存在").setData("该用户不存在");
         } else {
-            //
+            //验证密码
+//            studentMapper.authPwd(userName,password);
             return new BaseRes().setData(user);
         }
     }
@@ -80,6 +84,16 @@ public class LoginController {
 
     @RequestMapping("/main")
     public String toMain() {
-        return "main";
+        return "menu";
+    }
+
+    @RequestMapping("/bookList")
+    public String toBookList(HttpServletRequest request) {
+        List list = new ArrayList();
+        list.add(new Student("1"));
+        list.add(new Student("12"));
+        list.add(new Student("3"));
+        request.setAttribute("bookList", list);
+        return "bookList";
     }
 }

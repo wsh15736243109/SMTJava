@@ -4,6 +4,9 @@
     <select id="queryByName" resultType="com.smtjava.demo.pojo.Student" parameterType="String">
       select * from Student where bookName=#{bookName}
     </select>
+    <select id="authPwd" resultType="com.smtjava.demo.pojo.Student" parameterType="String">
+      select * from Student where bookName=#{bookName}
+    </select>
     <insert id="registerUser" parameterType="com.smtjava.demo.pojo.Student">
         insert into Student(bookName) values (#{bookName})
     </insert>

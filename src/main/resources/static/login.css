@@ -3,8 +3,8 @@
 }
 
 .div_dialog {
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
     position: absolute;
     background: white;
     margin: -150px -150px;
@@ -31,6 +31,20 @@
     line-height: 40px;
     text-align: center;/*水平居中*/
     color: #093f63;
+}
+.div_forget{
+    width: 100%;
+    height: 20px;
+    /*background: #ff0000;*/
+    float: left;
+    margin-top: 4px;
+    line-height: 20px;
+    text-align: right;/*水平居中*/
+    color: #093f63;
+}
+.div_forget:hover{
+    color: red;
+    background: #00dd00;
 }
 .div_input_parent{
     padding: 10px;

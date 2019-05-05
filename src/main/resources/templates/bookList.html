@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>书籍列表</title>
+</head>
+<body>
+<c:forEach items="${bookList}" var="book" varStatus="bookName">
+    <tr>
+        <td style="text-align: center">${bookName}</td>
+    </tr>
+</c:forEach>
+</body>
+</html>
